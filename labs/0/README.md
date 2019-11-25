@@ -112,3 +112,32 @@ Done!
 ```
 
 One interesting note, is that it seems like the same memory location was used both to allocate the `heap_array` and the `four_ints_ptr`, they were just used at different moments.
+
+Also, `valgrind` went ok too:
+
+```
+==11563== Memcheck, a memory error detector
+==11563== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==11563== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==11563== Command: ./arrays
+==11563==
+Filling an array at address 0x1fff0001e0 with 10 values
+Done!
+Filling an array at address 0x1fff0001bc with 1 values
+Done!
+Filling an array at address 0x1fff0001d0 with 4 values
+Done!
+Filling an array at address 0x522d480 with 5 values
+Done!
+Filling an array at address 0x522d4e0 with 4 values
+Done!
+==11563==
+==11563== HEAP SUMMARY:
+==11563==     in use at exit: 0 bytes in 0 blocks
+==11563==   total heap usage: 3 allocs, 3 frees, 1,060 bytes allocated
+==11563==
+==11563== All heap blocks were freed -- no leaks are possible
+==11563==
+==11563== For counts of detected and suppressed errors, rerun with: -v
+==11563== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+```
