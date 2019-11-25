@@ -95,3 +95,20 @@ Done!
 ==9525== For counts of detected and suppressed errors, rerun with: -v
 ==9525== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 ```
+
+## After TODO(4) output
+
+```
+Filling an array at address 0x7ffdecd5c600 with 10 values
+Done!
+Filling an array at address 0x7ffdecd5c5dc with 1 values
+Done!
+Filling an array at address 0x7ffdecd5c5f0 with 4 values
+Done!
+Filling an array at address 0x55d15b665670 with 5 values
+Done!
+Filling an array at address 0x55d15b665670 with 4 values
+Done!
+```
+
+One interesting note, is that it seems like the same memory location was used both to allocate the `heap_array` and the `four_ints_ptr`, they were just used at different moments.

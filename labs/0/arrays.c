@@ -167,5 +167,21 @@ int main(int argc, char* argv[]) {
   // we used on the FourInts above.  ptr->a is 
   // equivalent to (*ptr).a .  Note the difference 
   // between FourInts and FourInts*.)
+
+  // allocate FourInts struct on the heap
+  FourInts* four_ints_ptr = (FourInts*) malloc(sizeof(FourInts));
+
+  // fill the FourInts struct on the heap
+  fillArray((int*) four_ints_ptr, 4);
+
+  // sanity checks
+  assert(four_ints_ptr->a == 2);
+  assert(four_ints_ptr->b == 5);
+  assert(four_ints_ptr->c == 8);
+  assert(four_ints_ptr->d == 11);
+
+  // free FourInts struct on the heap
+  free(four_ints_ptr);
+
   return 0;
 }
