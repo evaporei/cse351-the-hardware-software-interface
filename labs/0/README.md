@@ -62,3 +62,36 @@ Done!
 ==9422== For counts of detected and suppressed errors, rerun with: -v
 ==9422== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 ```
+
+## Valgrind missing free output
+
+```
+==9525== Memcheck, a memory error detector
+==9525== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==9525== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==9525== Command: ./arrays
+==9525==
+Filling an array at address 0x1fff0001e0 with 10 values
+Done!
+Filling an array at address 0x1fff0001c4 with 1 values
+Done!
+Filling an array at address 0x1fff0001d0 with 4 values
+Done!
+Filling an array at address 0x522d480 with 5 values
+Done!
+==9525==
+==9525== HEAP SUMMARY:
+==9525==     in use at exit: 20 bytes in 1 blocks
+==9525==   total heap usage: 2 allocs, 1 frees, 1,044 bytes allocated
+==9525==
+==9525== LEAK SUMMARY:
+==9525==    definitely lost: 20 bytes in 1 blocks
+==9525==    indirectly lost: 0 bytes in 0 blocks
+==9525==      possibly lost: 0 bytes in 0 blocks
+==9525==    still reachable: 0 bytes in 0 blocks
+==9525==         suppressed: 0 bytes in 0 blocks
+==9525== Rerun with --leak-check=full to see details of leaked memory
+==9525==
+==9525== For counts of detected and suppressed errors, rerun with: -v
+==9525== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+```
