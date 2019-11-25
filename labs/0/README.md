@@ -20,3 +20,18 @@ Done!
 Filling an array at address 0x560963cf9670 with 5 values
 Done!
 ```
+
+## Filling array with bigger length output
+
+```
+Filling an array at address 0x7ffe7bff3b40 with 15 values
+Done!
+Filling an array at address 0x7ffe7bff3b24 with 1 values
+Done!
+Filling an array at address 0x7ffe7bff3b30 with 4 values
+Done!
+Filling an array at address 0x560707c11670 with 5 values
+Done!
+*** stack smashing detected ***: <unknown> terminated
+fish: “./arrays” terminated by signal SIGABRT (Abort)
+```
