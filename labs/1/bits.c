@@ -143,8 +143,18 @@ int bitXor(int x, int y) {
  *   Max ops: 8
  *   Rating: 1
  */
+
+int shift_and_sum(int number, int shift) {
+  return (number << shift) + number;
+}
+
 int thirdBits(void) {
-  return 2;
+  int initial_value = 1;
+  int three_shift = shift_and_sum(initial_value, 3);
+  int six_shift = shift_and_sum(three_shift, 6);
+  int twelve_shift = shift_and_sum(six_shift, 12);
+  int twenty_four_shift = shift_and_sum(twelve_shift, 24);
+  return twenty_four_shift;
 }
 // Rating: 2
 /* 
