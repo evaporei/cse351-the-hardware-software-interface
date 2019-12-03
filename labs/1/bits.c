@@ -184,7 +184,11 @@ int sign(int x) {
  *   Rating: 2
  */
 int getByte(int x, int n) {
-  return 2;
+  int shift_quantity = n << 3; // n * 8 -> 8 being each byte to the right
+  int only_left_hand = x >> shift_quantity; // example: x = 0x55112233, and n = 2. This results in 0x5511
+  int the_byte_without_useless_left_hand = only_left_hand & 0xff; // since the important part is in first byte, just remove everything else from the left
+  return the_byte_without_useless_left_hand;
+  // wow, such bad variable naming!
 }
 // Rating: 3
 /* 
