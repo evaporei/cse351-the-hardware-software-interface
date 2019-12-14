@@ -247,7 +247,9 @@ int bang(int x) {
  *   Rating: 3
  */
 int conditional(int x, int y, int z) {
-  return 2;
+  int zero_or_one = !!x;
+  int all_bits_zero_or_one = ~zero_or_one + 1;
+  return (all_bits_zero_or_one & y) | (~all_bits_zero_or_one & z);
 }
 // Extra Credit: Rating: 4
 /*
