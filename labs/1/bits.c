@@ -173,7 +173,9 @@ int fitsBits(int x, int n) {
  *  Rating: 2
  */
 int sign(int x) {
-    return 2;
+  int highest_negative_number = 0x80000000; // or (1 << 31)
+  int is_negative = (x & highest_negative_number) >> 31; // 0 or 1, because of & 0x8... + shift to the right
+  return is_negative | !!x; // the !!x converts a positive number to 1 :)
 }
 /* 
  * getByte - Extract byte n from int x
