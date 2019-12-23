@@ -202,7 +202,7 @@ int getByte(int x, int n) {
  *   Rating: 3 
  */
 int logicalShift(int x, int n) {
-  return 2;
+  return (x >> n) & (0xffffffff >> n);
 }
 /* 
  * addOK - Determine if can compute x+y without overflow
